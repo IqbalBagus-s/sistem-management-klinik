@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2024 at 10:27 AM
+-- Generation Time: May 25, 2024 at 05:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `patient` (
   `patientno` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `keluhan` varchar(255) NOT NULL,
+  `nohp` varchar(13) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -38,8 +38,10 @@ CREATE TABLE `patient` (
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`patientno`, `name`, `keluhan`, `address`) VALUES
-('PS001', 'poted', 'sakit perut', 'jalan manggis no 13 Wonorejo Rungkut Surabaya');
+INSERT INTO `patient` (`patientno`, `name`, `nohp`, `address`) VALUES
+('PS001', 'poted', '0823151241', 'Wonorejo Timur'),
+('PS002', 'kevin', '0819292101', 'Gunung anyar'),
+('PS003', 'Rino', '08210082182', 'Medokan Sawah');
 
 -- --------------------------------------------------------
 
