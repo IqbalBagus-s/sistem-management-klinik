@@ -67,11 +67,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JSeparator" name="jSeparator3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -200,9 +195,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtusername">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sylfaen" size="18" style="1"/>
             </Property>
@@ -233,11 +225,12 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Apoteker"/>
-                <StringItem index="1" value="Dokter"/>
-                <StringItem index="2" value="Resepsionis"/>
-                <StringItem index="3" value=" "/>
+              <StringArray count="5">
+                <StringItem index="0" value="Login Sebagai "/>
+                <StringItem index="1" value="Apoteker"/>
+                <StringItem index="2" value="Dokter"/>
+                <StringItem index="3" value="Resepsionis"/>
+                <StringItem index="4" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -250,9 +243,6 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="txtpassword">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Sylfaen" size="18" style="1"/>
             </Property>

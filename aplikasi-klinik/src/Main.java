@@ -80,6 +80,7 @@ public class Main extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Dokter");
+        jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -90,7 +91,8 @@ public class Main extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Pasien");
+        jButton2.setText("Data Pasien");
+        jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -219,24 +221,28 @@ public class Main extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Buat Jadwal");
+        jButton3.setBorder(null);
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 201, 140, 45));
 
         jButton4.setBackground(new java.awt.Color(0, 153, 153));
         jButton4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Lihat Dokter");
+        jButton4.setBorder(null);
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 456, 140, 45));
 
         jButton5.setBackground(new java.awt.Color(0, 153, 153));
         jButton5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Logout");
+        jButton5.setBorder(null);
         jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 507, 140, 45));
 
         jButton6.setBackground(new java.awt.Color(0, 153, 153));
         jButton6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Add User");
+        jButton6.setBorder(null);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -248,23 +254,27 @@ public class Main extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Buat Item");
+        jButton7.setBorder(null);
         jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 354, 140, 45));
 
         jButton8.setBackground(new java.awt.Color(0, 153, 153));
         jButton8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Lihat Resep");
+        jButton8.setBorder(null);
         jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 303, 140, 45));
 
         jButton9.setBackground(new java.awt.Color(0, 153, 153));
         jButton9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Lihat Jadwal");
+        jButton9.setBorder(null);
         jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 252, 140, 45));
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sistem Management Klinik");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -375,6 +385,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Patient p = new Patient();
+        p.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

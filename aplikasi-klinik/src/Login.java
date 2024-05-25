@@ -70,8 +70,6 @@ public class Login extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
-
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Login");
@@ -116,7 +114,6 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("Password");
 
-        txtusername.setBackground(new java.awt.Color(255, 255, 255));
         txtusername.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtusername.setForeground(new java.awt.Color(0, 102, 102));
         txtusername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
@@ -129,14 +126,13 @@ public class Login extends javax.swing.JFrame {
         txtutype.setBackground(new java.awt.Color(0, 102, 102));
         txtutype.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtutype.setForeground(new java.awt.Color(255, 255, 255));
-        txtutype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apoteker", "Dokter", "Resepsionis", " " }));
+        txtutype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Login Sebagai ", "Apoteker", "Dokter", "Resepsionis", " " }));
         txtutype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtutypeActionPerformed(evt);
             }
         });
 
-        txtpassword.setBackground(new java.awt.Color(255, 255, 255));
         txtpassword.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtpassword.setForeground(new java.awt.Color(0, 102, 102));
         txtpassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
@@ -284,7 +280,7 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Username atau Password Yang Anda Masukan Salah !!!");
                 txtusername.setText("");
                 txtpassword.setText("");
-                txtutype.setSelectedIndex(-1);
+                txtutype.setSelectedIndex(0);
                 txtusername.requestFocus();
             }
 
