@@ -52,7 +52,7 @@ INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfe
 --
 
 CREATE TABLE `patient` (
-  `patientno` varchar(255) NOT NULL,
+  `patientno` varchar(255klinik) NOT NULL,
   `name` varchar(255) NOT NULL,
   `nohp` varchar(13) NOT NULL,
   `address` varchar(255) NOT NULL
@@ -115,6 +115,9 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+ALTER TABLE `channel`
+ADD PRIMARY KEY (`channelno`);
 
 --
 -- AUTO_INCREMENT for table `user`
