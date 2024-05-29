@@ -15,7 +15,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
     }
-    
+    int idd;
+    String uctype; 
     int newid;
     String uname;
     String usertype;
@@ -28,6 +29,33 @@ public class Main extends javax.swing.JFrame {
         this.usertype = utype;
         jLabel5.setText(usertype);
         this.newid = id;
+        idd = newid;
+        
+        uctype = jLabel5.getText();
+        
+        if(uctype.equals("doctor"))
+        {
+            jButton2.setVisible(false);
+            jButton3.setVisible(false);
+            jButton6.setVisible(false);
+            jButton7.setVisible(false);
+            jButton8.setVisible(false);
+        }
+        else if (uctype.equals("Resepsionis"))
+        {
+            jButton1.setVisible(false);
+            jButton8.setVisible(false);
+        }
+        else if (uctype.equals("Apoteker"))
+        {
+            jButton1.setVisible(false);
+            jButton2.setVisible(false);
+            jButton3.setVisible(false);
+            jButton9.setVisible(false);
+            jButton6.setVisible(false);
+        }
+        
+        
     }
 
     /**
@@ -391,6 +419,13 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        if(uctype.equals("doctor"))
+        {
+            new doctor(idd,uctype).setVisible(true);
+        }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -433,6 +468,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
