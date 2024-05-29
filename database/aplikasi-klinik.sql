@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2024 at 05:02 PM
+-- Generation Time: May 29, 2024 at 08:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `aplikasi-klinik`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor`
+--
+
+CREATE TABLE `doctor` (
+  `doctorno` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `special` varchar(255) NOT NULL,
+  `qualification` varchar(255) NOT NULL,
+  `channelfee` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `room` varchar(255) NOT NULL,
+  `log_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `doctor`
+--
+
+INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfee`, `phone`, `room`, `log_id`) VALUES
+('DS001', 'samul', 'mata', 's1', 'Rp. 120.000', '081321331331', '5', 2);
 
 -- --------------------------------------------------------
 
@@ -69,6 +93,12 @@ INSERT INTO `user` (`id`, `name`, `username`, `password`, `utype`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `doctor`
+--
+ALTER TABLE `doctor`
+  ADD PRIMARY KEY (`doctorno`);
 
 --
 -- Indexes for table `patient`
