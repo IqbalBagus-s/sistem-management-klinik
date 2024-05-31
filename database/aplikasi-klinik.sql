@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2024 at 08:13 PM
+-- Generation Time: May 31, 2024 at 09:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `aplikasi-klinik`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `channel`
+--
+
+CREATE TABLE `channel` (
+  `channelno` varchar(255) NOT NULL,
+  `doctorname` varchar(255) NOT NULL,
+  `patientname` varchar(255) NOT NULL,
+  `roomno` varchar(255) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `channel`
+--
+
+INSERT INTO `channel` (`channelno`, `doctorname`, `patientname`, `roomno`, `date`) VALUES
+('CH001', 'DS001', 'PS002', 'R01', '2024-09-08');
 
 -- --------------------------------------------------------
 
@@ -43,7 +64,8 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfee`, `phone`, `room`, `log_id`) VALUES
-('DS001', 'samul', 'mata', 's1', 'Rp. 120.000', '081321331331', '5', 2);
+('DS001', 'samul', 'kandungan', 's1', 'Rp. 120.000', '081321331331', '5', 2),
+('DS002', 'rian', 'gigi', 's1', 'Rp. 150.000', '083214671414', '2', 2);
 
 -- --------------------------------------------------------
 
@@ -52,7 +74,7 @@ INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfe
 --
 
 CREATE TABLE `patient` (
-  `patientno` varchar(255klinik) NOT NULL,
+  `patientno` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `nohp` varchar(13) NOT NULL,
   `address` varchar(255) NOT NULL
@@ -95,6 +117,12 @@ INSERT INTO `user` (`id`, `name`, `username`, `password`, `utype`) VALUES
 --
 
 --
+-- Indexes for table `channel`
+--
+ALTER TABLE `channel`
+  ADD PRIMARY KEY (`channelno`);
+
+--
 -- Indexes for table `doctor`
 --
 ALTER TABLE `doctor`
@@ -115,9 +143,6 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
-ALTER TABLE `channel`
-ADD PRIMARY KEY (`channelno`);
 
 --
 -- AUTO_INCREMENT for table `user`

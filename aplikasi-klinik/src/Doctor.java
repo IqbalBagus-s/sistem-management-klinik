@@ -54,8 +54,8 @@ public class Doctor extends javax.swing.JFrame {
     
     public void Connect() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Perbaikan driver class name
-            con = DriverManager.getConnection("jdbc:mysql://localhost/aplikasi-klinik", "root", ""); // Perbaikan URL JDBC
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+            con = DriverManager.getConnection("jdbc:mysql://localhost/aplikasi-klinik", "root", ""); 
         } 
         catch (ClassNotFoundException ex) {
             Logger.getLogger(Patient.class.getName()).log(Level.SEVERE, null, ex);
