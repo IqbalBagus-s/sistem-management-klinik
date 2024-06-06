@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2024 at 09:53 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 05 Jun 2024 pada 08.51
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,28 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `channel`
---
-
-CREATE TABLE `channel` (
-  `channelno` varchar(255) NOT NULL,
-  `doctorname` varchar(255) NOT NULL,
-  `patientname` varchar(255) NOT NULL,
-  `roomno` varchar(255) NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `channel`
---
-
-INSERT INTO `channel` (`channelno`, `doctorname`, `patientname`, `roomno`, `date`) VALUES
-('CH001', 'DS001', 'PS002', 'R01', '2024-09-08');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `doctor`
+-- Struktur dari tabel `doctor`
 --
 
 CREATE TABLE `doctor` (
@@ -60,17 +39,31 @@ CREATE TABLE `doctor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `doctor`
+-- Dumping data untuk tabel `doctor`
 --
 
 INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfee`, `phone`, `room`, `log_id`) VALUES
-('DS001', 'samul', 'kandungan', 's1', 'Rp. 120.000', '081321331331', '5', 2),
-('DS002', 'rian', 'gigi', 's1', 'Rp. 150.000', '083214671414', '2', 2);
+('DS001', 'samul', 'mata', 's1', 'Rp. 120.000', '081321331331', '5', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `patient`
+-- Struktur dari tabel `obat`
+--
+
+CREATE TABLE `obat` (
+  `idobat` varchar(255) NOT NULL,
+  `namaobat` varchar(255) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL,
+  `hargajual` int(11) NOT NULL,
+  `hargabeli` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `patient`
 --
 
 CREATE TABLE `patient` (
@@ -81,7 +74,7 @@ CREATE TABLE `patient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `patient`
+-- Dumping data untuk tabel `patient`
 --
 
 INSERT INTO `patient` (`patientno`, `name`, `nohp`, `address`) VALUES
@@ -92,7 +85,21 @@ INSERT INTO `patient` (`patientno`, `name`, `nohp`, `address`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `resep`
+--
+
+CREATE TABLE `resep` (
+  `rno` varchar(255) NOT NULL,
+  `chno` varchar(255) NOT NULL,
+  `doctorname` varchar(255) NOT NULL,
+  `ptype` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -104,7 +111,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `utype`) VALUES
@@ -117,38 +124,34 @@ INSERT INTO `user` (`id`, `name`, `username`, `password`, `utype`) VALUES
 --
 
 --
--- Indexes for table `channel`
---
-ALTER TABLE `channel`
-  ADD PRIMARY KEY (`channelno`);
-
---
--- Indexes for table `doctor`
+-- Indeks untuk tabel `doctor`
 --
 ALTER TABLE `doctor`
   ADD PRIMARY KEY (`doctorno`);
 
 --
--- Indexes for table `patient`
+-- Indeks untuk tabel `obat`
+--
+ALTER TABLE `obat`
+  ADD PRIMARY KEY (`idobat`);
+
+--
+-- Indeks untuk tabel `patient`
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`patientno`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `resep`
+--
+ALTER TABLE `resep`
+  ADD PRIMARY KEY (`rno`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

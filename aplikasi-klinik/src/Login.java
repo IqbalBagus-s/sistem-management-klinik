@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form Loginn
+     * Creates new form Login
      */
     public Login() {
         initComponents();
@@ -33,12 +33,11 @@ public class Login extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver"); // Perbaikan driver class name
             con = DriverManager.getConnection("jdbc:mysql://localhost/aplikasi-klinik", "root", ""); 
         } 
-        catch (ClassNotFoundException ex) {
+        catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(UserAdded.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch (SQLException ex) { // Perbaikan penulisan variabel
-            Logger.getLogger(UserAdded.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // Perbaikan penulisan variabel
+
     }
 
     /**
@@ -321,6 +320,12 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
