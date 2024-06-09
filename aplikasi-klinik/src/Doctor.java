@@ -161,6 +161,7 @@ public class Doctor extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -197,7 +198,7 @@ public class Doctor extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("kualifikasi");
+        jLabel5.setText("Jam kerja");
 
         lbldno.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         lbldno.setForeground(new java.awt.Color(255, 255, 0));
@@ -382,7 +383,7 @@ public class Doctor extends javax.swing.JFrame {
 
             },
             new String [] {
-                "No. Dokter", "Nama Dokter", "Spesialisasi", "Kualifikasi", "Biaya", "No.Telpon", "Ruangan"
+                "No. Dokter", "Nama Dokter", "Spesialisasi", "Jam kerja", "Biaya", "No.Telpon", "Ruangan"
             }
         ) {
             Class[] types = new Class [] {

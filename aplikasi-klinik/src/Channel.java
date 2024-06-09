@@ -209,6 +209,7 @@ public class Channel extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -452,7 +453,7 @@ public class Channel extends javax.swing.JFrame {
         Doctor d = (Doctor) txtdo.getSelectedItem();
         Patient p = (Patient) txtpa.getSelectedItem();
         String droom = txtroom.getText();
-        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
         String date = dateformat.format(txtdate.getDate());
         
         

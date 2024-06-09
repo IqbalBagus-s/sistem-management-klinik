@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2024 at 09:09 PM
+-- Generation Time: Jun 09, 2024 at 10:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,7 +41,9 @@ CREATE TABLE `channel` (
 
 INSERT INTO `channel` (`channelno`, `doctorname`, `patientname`, `roomno`, `date`) VALUES
 ('CH001', 'DS001', 'PS002', 'R01', '2024-09-08'),
-('CH002', 'DS001', 'PS001', 'R02', '2024-10-07');
+('CH002', 'DS001', 'PS001', 'R02', '2024-10-07'),
+('CH003', 'DS002', 'PS003', '4', '2024-06-03'),
+('CH004', 'DS003', 'PS004', '10', '2024-06-05');
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,8 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfee`, `phone`, `room`, `log_id`) VALUES
-('DS001', 'samul', 'mata', 's1', 'Rp. 120.000', '081321331331', '5', 2);
+('DS001', 'samul', 'mata', 'Pagi - Siang', 'Rp. 120.000', '081321331331', '5', 2),
+('DS003', 'rusdi', 'ilmu hitam', 'malam', '300', '00120480414', '4', 4);
 
 -- --------------------------------------------------------
 
@@ -87,7 +90,8 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`idobat`, `namaobat`, `deskripsi`, `hargajual`, `hargabeli`, `jumlah`) VALUES
-('IU001', 'loratadin', 'obat diabetes', 70000, 80000, 50);
+('IU001', 'loratadin', 'obat diabetes', 70000, 80000, 50),
+('IU002', 'paracetamol', 'obat pereda demam', 10000, 8000, 79);
 
 -- --------------------------------------------------------
 
@@ -109,7 +113,8 @@ CREATE TABLE `patient` (
 INSERT INTO `patient` (`patientno`, `name`, `nohp`, `address`) VALUES
 ('PS001', 'poted', '0823151241', 'Wonorejo Timur'),
 ('PS002', 'kevin', '0819292101', 'Gunung anyar'),
-('PS003', 'Rino', '08210082182', 'Medokan Sawah');
+('PS003', 'Rino', '08210082182', 'Medokan Sawah'),
+('PS004', 'Dias', '08219191121', 'Kenjeran');
 
 -- --------------------------------------------------------
 
@@ -130,8 +135,8 @@ CREATE TABLE `resep` (
 --
 
 INSERT INTO `resep` (`rno`, `chno`, `doctorname`, `ptype`, `description`) VALUES
-('RS001', 'CH002', 'CH002', 'kanker', 'kanker stadium akhir'),
-('RS002', 'CH001', 'samul', 'kanker', 'blalbaba');
+('RS002', 'CH001', 'samul', 'kanker', 'blalbaba'),
+('RS003', 'CH004', 'rusdi', 'Impotensi', 'Harap obat diminum secara berkala');
 
 -- --------------------------------------------------------
 
@@ -154,7 +159,8 @@ CREATE TABLE `sales` (
 INSERT INTO `sales` (`id`, `date`, `subtotal`, `pay`, `balance`) VALUES
 (1, '2024-06-09', 630000, 3000000, 2370000),
 (2, '2024-06-09', 420000, 500000, 80000),
-(3, '2024-06-09', 280000, 300000, 20000);
+(3, '2024-06-09', 280000, 300000, 20000),
+(4, '2024-06-09', 100000, 200000, 100000);
 
 -- --------------------------------------------------------
 
@@ -176,7 +182,8 @@ CREATE TABLE `sale_product` (
 --
 
 INSERT INTO `sale_product` (`id`, `sales_id`, `prod_id`, `sellprice`, `qty`, `total`) VALUES
-(1, 3, 'IU001', 70000, 4, 280000);
+(1, 3, 'IU001', 70000, 4, 280000),
+(2, 4, 'IU002', 10000, 10, 100000);
 
 -- --------------------------------------------------------
 
@@ -262,13 +269,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sale_product`
 --
 ALTER TABLE `sale_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -3,6 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="undecorated" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -307,7 +308,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="kualifikasi"/>
+                    <Property name="text" type="java.lang.String" value="Jam kerja"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lbldno">
@@ -571,7 +572,7 @@
                                 <Column editable="true" title="No. Dokter" type="java.lang.String"/>
                                 <Column editable="true" title="Nama Dokter" type="java.lang.String"/>
                                 <Column editable="true" title="Spesialisasi" type="java.lang.String"/>
-                                <Column editable="true" title="Kualifikasi" type="java.lang.String"/>
+                                <Column editable="true" title="Jam kerja" type="java.lang.String"/>
                                 <Column editable="true" title="Biaya" type="java.lang.String"/>
                                 <Column editable="true" title="No.Telpon" type="java.lang.String"/>
                                 <Column editable="true" title="Ruangan" type="java.lang.String"/>

@@ -83,6 +83,7 @@ public class UserAdded extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,8 +91,6 @@ public class UserAdded extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-
-        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +126,6 @@ public class UserAdded extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setText("Tipe User");
 
-        txtname.setBackground(new java.awt.Color(255, 255, 255));
         txtname.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtname.setForeground(new java.awt.Color(0, 102, 102));
         txtname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
@@ -149,7 +147,6 @@ public class UserAdded extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("Password");
 
-        txtusername.setBackground(new java.awt.Color(255, 255, 255));
         txtusername.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtusername.setForeground(new java.awt.Color(0, 102, 102));
         txtusername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
@@ -169,7 +166,6 @@ public class UserAdded extends javax.swing.JFrame {
             }
         });
 
-        txtpassword.setBackground(new java.awt.Color(255, 255, 255));
         txtpassword.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtpassword.setForeground(new java.awt.Color(0, 102, 102));
         txtpassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
@@ -256,10 +252,6 @@ public class UserAdded extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 320));
 
         jPanel5.setBackground(new java.awt.Color(0, 102, 102));
-
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
