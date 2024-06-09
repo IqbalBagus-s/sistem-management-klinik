@@ -300,7 +300,7 @@ public class Viewchannel extends javax.swing.JFrame {
         int selectedIndex = jTable1.getSelectedRow();
         
         String channelno = dl.getValueAt (selectedIndex, 0).toString();
-        String doctorname = dl.getValueAt (selectedIndex, 0).toString();
+        String doctorname = dl.getValueAt (selectedIndex, 1).toString();
         
         new Prescription(channelno, doctorname).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
