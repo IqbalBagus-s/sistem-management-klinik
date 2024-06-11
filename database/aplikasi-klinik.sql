@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `aplikasi-klinik`
 --
+CREATE DATABASE IF NOT EXISTS `aplikasi-klinik`;
+USE `aplikasi-klinik`;
 
 -- --------------------------------------------------------
 
@@ -27,12 +29,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `channel`
 --
 
-CREATE TABLE `channel` (
+CREATE TABLE IF NOT EXISTS `channel` (
   `channelno` varchar(255) NOT NULL,
   `doctorname` varchar(255) NOT NULL,
   `patientname` varchar(255) NOT NULL,
   `roomno` varchar(255) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  PRIMARY KEY (`channelno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -51,7 +54,7 @@ INSERT INTO `channel` (`channelno`, `doctorname`, `patientname`, `roomno`, `date
 -- Table structure for table `doctor`
 --
 
-CREATE TABLE `doctor` (
+CREATE TABLE IF NOT EXISTS `doctor` (
   `doctorno` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `special` varchar(255) NOT NULL,
@@ -59,7 +62,8 @@ CREATE TABLE `doctor` (
   `channelfee` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `room` varchar(255) NOT NULL,
-  `log_id` int(11) NOT NULL
+  `log_id` int(11) NOT NULL,
+  PRIMARY KEY (`doctorno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -76,13 +80,14 @@ INSERT INTO `doctor` (`doctorno`, `name`, `special`, `qualification`, `channelfe
 -- Table structure for table `obat`
 --
 
-CREATE TABLE `obat` (
+CREATE TABLE IF NOT EXISTS `obat` (
   `idobat` varchar(255) NOT NULL,
   `namaobat` varchar(255) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
   `hargajual` int(30) NOT NULL,
   `hargabeli` int(30) NOT NULL,
-  `jumlah` int(11) NOT NULL
+  `jumlah` int(11) NOT NULL,
+  PRIMARY KEY (`idobat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -99,11 +104,12 @@ INSERT INTO `obat` (`idobat`, `namaobat`, `deskripsi`, `hargajual`, `hargabeli`,
 -- Table structure for table `patient`
 --
 
-CREATE TABLE `patient` (
+CREATE TABLE IF NOT EXISTS `patient` (
   `patientno` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `nohp` varchar(13) NOT NULL,
-  `address` varchar(255) NOT NULL
+  `address` varchar(255) NOT NULL,
+  PRIMARY KEY (`patientno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -122,12 +128,13 @@ INSERT INTO `patient` (`patientno`, `name`, `nohp`, `address`) VALUES
 -- Table structure for table `resep`
 --
 
-CREATE TABLE `resep` (
+CREATE TABLE IF NOT EXISTS `resep` (
   `rno` varchar(255) NOT NULL,
   `chno` varchar(255) NOT NULL,
   `doctorname` varchar(255) NOT NULL,
   `ptype` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`rno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -144,12 +151,13 @@ INSERT INTO `resep` (`rno`, `chno`, `doctorname`, `ptype`, `description`) VALUES
 -- Table structure for table `sales`
 --
 
-CREATE TABLE `sales` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `subtotal` int(255) NOT NULL,
   `pay` int(255) NOT NULL,
-  `balance` int(255) NOT NULL
+  `balance` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -168,13 +176,14 @@ INSERT INTO `sales` (`id`, `date`, `subtotal`, `pay`, `balance`) VALUES
 -- Table structure for table `sale_product`
 --
 
-CREATE TABLE `sale_product` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `sale_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sales_id` int(11) NOT NULL,
   `prod_id` varchar(255) NOT NULL,
   `sellprice` int(255) NOT NULL,
   `qty` int(255) NOT NULL,
-  `total` int(255) NOT NULL
+  `total` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -191,12 +200,13 @@ INSERT INTO `sale_product` (`id`, `sales_id`, `prod_id`, `sellprice`, `qty`, `to
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `utype` varchar(255) NOT NULL
+  `utype` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -208,58 +218,6 @@ INSERT INTO `user` (`id`, `name`, `username`, `password`, `utype`) VALUES
 (2, 'samul', 'samul', 'samul', 'Dokter'),
 (3, 'fuad racing mandalika', 'fuad', '123', 'Resepsionis'),
 (4, 'rusdi ngawi', 'rusdi', '123', 'Dokter');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `channel`
---
-ALTER TABLE `channel`
-  ADD PRIMARY KEY (`channelno`);
-
---
--- Indexes for table `doctor`
---
-ALTER TABLE `doctor`
-  ADD PRIMARY KEY (`doctorno`);
-
---
--- Indexes for table `obat`
---
-ALTER TABLE `obat`
-  ADD PRIMARY KEY (`idobat`);
-
---
--- Indexes for table `patient`
---
-ALTER TABLE `patient`
-  ADD PRIMARY KEY (`patientno`);
-
---
--- Indexes for table `resep`
---
-ALTER TABLE `resep`
-  ADD PRIMARY KEY (`rno`);
-
---
--- Indexes for table `sales`
---
-ALTER TABLE `sales`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sale_product`
---
-ALTER TABLE `sale_product`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
