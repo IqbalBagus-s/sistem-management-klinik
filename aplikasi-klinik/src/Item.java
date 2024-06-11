@@ -536,7 +536,7 @@ public class Item extends javax.swing.JFrame {
             pst.setString(6, idobat);
             pst.executeUpdate();
             
-            JOptionPane.showMessageDialog(this, "Data Obat Telah Ditambahkan !!!");
+            JOptionPane.showMessageDialog(this, "Data Obat Telah Diperbarui !!!");
             AutoID();
             txtnamaobat.setText("");
             txtdeskripsi.setText("");
@@ -633,7 +633,7 @@ public class Item extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Patient().setVisible(true);
+                new Item().setVisible(true);
             }
         });
     }

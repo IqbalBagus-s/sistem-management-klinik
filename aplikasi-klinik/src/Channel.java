@@ -316,7 +316,7 @@ public class Channel extends javax.swing.JFrame {
 
             },
             new String [] {
-                "No. Jadwal", "Nama Dokter", "Nama Pasien", "Ruangan", "Tanggal"
+                "No. Jadwal", "No. Dokter", "No. Pasien", "Ruangan", "Tanggal"
             }
         ) {
             Class[] types = new Class [] {
@@ -449,7 +449,7 @@ public class Channel extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // FUngsi Menambah data ke database
-        chno = lbldno.getText();
+        String chno = lbldno.getText();
         Doctor d = (Doctor) txtdo.getSelectedItem();
         Patient p = (Patient) txtpa.getSelectedItem();
         String droom = txtroom.getText();
@@ -470,11 +470,9 @@ public class Channel extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Jadwal Baru Telah Dibuat !!!");
             AutoID();
-            lbldno.setText("");
             txtdo.setSelectedIndex(0);
             txtpa.setSelectedIndex(0);
             txtroom.setText("");
-            
             Channel_table();
             
             
@@ -499,7 +497,6 @@ public class Channel extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Jadwal Telah Dibatalkan !!!");
             AutoID();
-            lbldno.setText("");
             txtdo.setSelectedIndex(0);
             txtpa.setSelectedIndex(0);
             txtroom.setText("");

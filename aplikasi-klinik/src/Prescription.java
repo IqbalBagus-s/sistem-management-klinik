@@ -158,7 +158,7 @@ public class Prescription extends javax.swing.JFrame {
         txtrno.setBackground(new java.awt.Color(255, 255, 255));
         txtrno.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         txtrno.setForeground(new java.awt.Color(255, 255, 0));
-        txtrno.setText("jLabel5");
+        txtrno.setText("No. Resep");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

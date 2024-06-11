@@ -464,8 +464,8 @@
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="5" rowCount="0">
                                 <Column editable="true" title="No. Jadwal" type="java.lang.String"/>
-                                <Column editable="true" title="Nama Dokter" type="java.lang.String"/>
-                                <Column editable="true" title="Nama Pasien" type="java.lang.String"/>
+                                <Column editable="true" title="No. Dokter" type="java.lang.String"/>
+                                <Column editable="true" title="No. Pasien" type="java.lang.String"/>
                                 <Column editable="true" title="Ruangan" type="java.lang.String"/>
                                 <Column editable="true" title="Tanggal" type="java.lang.String"/>
                               </Table>
